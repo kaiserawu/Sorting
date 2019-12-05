@@ -14,12 +14,22 @@ def selection_sort( arr ):
         curr_item = arr[i]
         arr[i] = arr[smallest_index]
         arr[smallest_index] = curr_item
-        
+
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    complete = False
+
+    while not complete:
+        complete = True
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                complete = False
 
     return arr
 

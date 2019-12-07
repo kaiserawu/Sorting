@@ -3,7 +3,26 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    
+    curr_index = 0
+    counter1 = 0
+    counter2 = 0
+    while counter1 < len(arrA) or counter2 < len(arrB):
+        if counter1 < len(arrA) and counter2 < len(arrB):
+            if arrA[counter1] <= arrB[counter2]:
+                merged_arr[curr_index] = arrA[counter1]
+                counter1 += 1
+            else:
+                merged_arr[curr_index] = arrB[counter2]
+                counter2 += 1
+        elif counter2 < len(arrB):
+            merged_arr[curr_index] = arrB[counter2]
+            counter2 += 1
+        else:
+            merged_arr[curr_index] = arrA[counter1]
+            counter1 += 1
+        curr_index += 1
+        print(f'current counters and index: {counter1}, {counter2}, {curr_index}')
+    print(merged_arr)
     return merged_arr
 
 

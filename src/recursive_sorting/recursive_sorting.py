@@ -21,15 +21,18 @@ def merge( arrA, arrB ):
             merged_arr[curr_index] = arrA[counter1]
             counter1 += 1
         curr_index += 1
-        print(f'current counters and index: {counter1}, {counter2}, {curr_index}')
-    print(merged_arr)
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-
+    middle = int(len(arr) / 2)
+    if middle == 0:
+        return arr
+    sub1 = merge_sort(arr[:middle])
+    sub2 = merge_sort(arr[middle:])
+    arr = merge(sub1, sub2)
     return arr
 
 
